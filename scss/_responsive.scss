@@ -1,0 +1,245 @@
+@media (max-width: 1400px) {
+
+}
+@media (max-width: 1200px) {
+    .main-header {
+        &__nav {
+            display: none;
+            padding: 0;
+            position: fixed;
+            left: 0px;
+            width: 100%;
+            top: 3.5rem;
+            height: 100vh;
+            background: white;
+            z-index: 10;
+        }
+        &__tools {
+            display: none;
+        }
+        &__mobile {
+            gap: 16px;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        &__logo {
+            img {
+                height: 1.5rem;
+            }
+        }
+        &__link {
+            padding: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        &__links {
+            padding: 2.875rem 0;
+            flex-direction: column;
+            gap: 2.5rem 0;
+        }
+        &__sub-links {
+            box-shadow: none;
+            background: none;
+            position: static;
+            display: block
+        }
+        &__sub-link {
+            padding: 0;
+            margin-top: 1rem;
+            &:hover {
+                background: none;
+                color: $orange-400;
+            }
+        }
+    }
+}
+@media (max-width: 992px) {
+    .map-afiliates {
+        position: relative;
+        left: 0;
+        bottom: 0;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        padding-right: var(--bs-gutter-x, 1rem);
+        padding-left: var(--bs-gutter-x, 1rem);
+    }
+    .row {
+        --bs-gutter-x: 1rem;
+    }
+}
+@media (max-width: 576px) {
+    h1,.h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    h2,.h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    h3,.h3 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    h4,.h4 {
+        font-size: 1.125rem;
+        margin-bottom: 0.75rem;
+        margin-top: 0.75rem;
+    }
+    h5,.h5 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    .section-space {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+        &_top-half {
+            padding-top: 1.5rem;
+        }
+    }
+    .section-text {
+        font-size: 1rem;
+    }
+    .section-btn {
+        max-width: 100%;
+        margin-top: 2.5rem;
+    }
+    .section-header {
+        margin-bottom: 24px;
+    }
+    .section-image {
+        height: 12.5rem;
+        img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    /* ---------------------------------- index --------------------------------- */
+    .counters-statistic {
+        margin-top: 2.5rem;
+    }
+    .finance-graph {
+        &__bar {
+            border-radius: 2.5rem .625rem .625rem 0rem;
+            &_first {
+                height: 10.625rem;
+            }
+            &_second {
+                height: 15.625rem;
+                margin-left: -0.5rem;
+            }
+            &_fird {
+                height: 21.875rem;
+                margin-left: -0.5rem;
+            }
+        }
+        &__bar-label {
+            font-size: 1rem;
+        }
+    }
+    .direction-card {
+        padding: 1rem;
+        box-shadow: $shadow-large;
+        &__icon_hover {
+            opacity: 1;
+        }
+        &__icon_normal {
+            opacity: 0;
+        }
+    }
+    .map-afiliates {
+        top: -50px;
+        height:500px;
+        transform: scale(0.75);
+    }
+    .persona {
+        &__blockquote {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            margin-top: 2.5rem;
+            position: relative;
+            &:before {
+                bottom: 100%;
+                transform: scale(0.6);
+                transform-origin: left center;
+            }
+            &:after {
+                left: auto;
+                top: 100%;
+                right: 0;
+                transform: scale(0.6);
+                transform-origin: right center;
+            }
+        }
+        &__name {
+            h4 {
+                margin: 0;
+            }
+        }
+    }
+    /* ------------------------------- directions ------------------------------- */
+    .directions-types {
+        margin-top: 2rem;
+        justify-content: space-evenly;
+        &__icon {
+            width: 5rem;
+            height: 5rem;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .flights-bg {
+        background-image: none;
+    }
+    .form-card {
+        padding: 1rem;
+        border-radius: 1.5rem 0 0 0;
+    }
+    .direction-image {
+        img {
+            border-radius: 2.5rem .625rem .625rem .625rem;
+        }
+    }
+    .direction-cards {
+        margin-top: -3rem;
+    }
+    /* --------------------------------- footer --------------------------------- */
+    .main-footer {
+        &__top {
+            padding: 2.5rem 0 1.5rem 0;
+        }
+        &__mail {
+            margin-top: 1.5rem;
+        }
+        &__bottom {
+            padding: 1.5rem 0
+        }
+    }
+
+
+    /* ----------------------------------- ui ----------------------------------- */
+    .breadcrumbs {
+        margin-bottom: 2.5rem;
+        .icon-arrow-left {
+            display: inline-block;
+            margin-right: .5rem;
+        }
+        &__item + &__item {
+            display: none;
+        }
+    }
+    .button {
+        &_m-full {
+            width: 100%;
+        }
+    }
+}
