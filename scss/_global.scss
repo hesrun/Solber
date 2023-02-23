@@ -59,14 +59,39 @@ a {
         text-decoration: none;
     }
 }
-
 b {
     font-weight: 600;
 }
-
 strong {
     font-weight: 500;
 }
+figure {
+    margin: 2.5rem 0;
+    img {
+        vertical-align: middle;
+        border-radius: 5rem 1.25rem 1.25rem 1.25rem;
+    }
+}
+p {
+    margin-bottom: 1rem;
+    &:first-child {
+        margin-top: 0;
+    }
+}
+hr {
+    border: none;
+    height: 1px;
+    background: $gray-100;
+}
+ul {
+    margin-bottom: 1rem;
+    list-style: inside;
+    list-style-type: '— ';
+    li {
+        margin-bottom: 0.5rem;
+    }
+}
+
 
 h1,.h1 {
     font-size: 4rem;
@@ -133,18 +158,7 @@ h5,.h5 {
     }
 }
 
-p {
-    margin-bottom: 1rem;
-    &:first-child {
-        margin-top: 0;
-    }
-}
 
-hr {
-    border: none;
-    height: 1px;
-    background: $gray-100;
-}
 
 /* ---------------------------------- lines --------------------------------- */
 .line-left-start {
