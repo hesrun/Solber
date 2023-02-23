@@ -1,0 +1,26 @@
+@mixin placeholder {
+    &::-webkit-input-placeholder {@content}
+    &:-moz-placeholder           {@content}
+    &::-moz-placeholder          {@content}
+    &:-ms-input-placeholder      {@content}  
+}
+@mixin scrollbars($size, $foreground-color, $background-color) {
+    &::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+      border-radius: .5rem;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: $background-color;
+      border-radius: .5rem;
+    }
+    & {
+      scrollbar-face-color: $foreground-color;
+      scrollbar-track-color: $background-color;
+    }
+}
+  

@@ -306,18 +306,39 @@ h5:first-child, .h5:first-child {
   margin-bottom: 0;
 }
 .field__input {
-  padding: 0 1rem;
+  padding: 1rem 1rem 0;
   font-size: 16px;
-  height: 3.5rem;
   background: none;
+  min-height: 3.5rem;
   width: 100%;
   border-radius: 8px;
   border: 1px #E5E5E5 solid;
   outline: none;
   transition: all 0.3s;
 }
-.field__input:focus {
+.field__input::-webkit-input-placeholder {
+  opacity: 1;
+  color: #A3A3A3;
+}
+.field__input:-moz-placeholder {
+  opacity: 1;
+  color: #A3A3A3;
+}
+.field__input::-moz-placeholder {
+  opacity: 1;
+  color: #A3A3A3;
+}
+.field__input:-ms-input-placeholder {
+  opacity: 1;
+  color: #A3A3A3;
+}
+.field__input:focus, .field__input:valid {
   border-color: #262626;
+}
+.field__input:focus ~ .field__label, .field__input:valid ~ .field__label {
+  font-size: 0.75rem;
+  line-height: 18px;
+  top: 0.5rem;
 }
 .field__input:disabled {
   border-color: #A3A3A3;
@@ -329,9 +350,25 @@ h5:first-child, .h5:first-child {
 }
 .field__input_textarea {
   padding-top: 1rem;
-  padding-top: 1rem;
+  padding-bottom: 1rem;
   min-height: 7.5rem;
   resize: vertical;
+}
+.field__input_textarea::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+.field__input_textarea::-webkit-scrollbar-thumb {
+  background: #FF5100;
+  border-radius: 0.5rem;
+}
+.field__input_textarea::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0.5rem;
+}
+.field__input_textarea {
+  scrollbar-face-color: #FF5100;
+  scrollbar-track-color: transparent;
 }
 .field__error {
   top: 100%;
@@ -339,6 +376,15 @@ h5:first-child, .h5:first-child {
   font-size: 12px;
   line-height: 2;
   color: #DC2626;
+}
+.field__label {
+  position: absolute;
+  top: 0px;
+  padding: 0 1rem;
+  color: #A3A3A3;
+  line-height: 3.5rem;
+  pointer-events: none;
+  transition: all 0.3s;
 }
 
 .slider-nav-btn {

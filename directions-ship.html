@@ -221,14 +221,16 @@
                     <div class="col-lg-5 offset-lg-1">
                         <form action="" class="form-card">
                             <div class="field">
-                                <input class="field__input field__input_novalid" type="tel" placeholder="Ваш номер телефона">
+                                <input class="field__input field__input_novalid" type="tel" required>
+                                <div class="field__label">Ваш номер телефона</div>
                                 <div class="field__error">Error text</div>
                             </div>
                             <div class="field">
-                                <input class="field__input" disabled type="text" placeholder="Ваше имя">
+                                <input class="field__input" type="text" required>
+                                <div class="field__label">Ваше имя</div>
                             </div>
                             <div class="field">
-                                <textarea class="field__input field__input_textarea" placeholder="Задайте свой вопрос здесь..."></textarea>
+                                <textarea class="field__input field__input_textarea" required placeholder="Задайте свой вопрос здесь..."></textarea>
                             </div>
                             <button type="submit" class="button button_orange button_outline button_full">Подробнее</button>
                         </form>
