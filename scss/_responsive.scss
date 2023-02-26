@@ -248,26 +248,32 @@
         flex-direction: column;
         align-items: flex-start;
     }
-        /* ---------------------------------- jobs ---------------------------------- */
-        .jobs-list {
-            grid-template-columns: 1fr;
+    /* ---------------------------------- jobs ---------------------------------- */
+    .jobs-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        &__item {
+            padding: 1rem;
             gap: 1rem;
-            &__item {
-                padding: 1rem;
-                gap: 1rem;
-                grid-template-columns: 1fr;
-                > div:first-child {
-                    grid-column: 1;
-                }
-                > div:last-child {
-                    display: none;
-                }
+            grid-template-columns: 1fr;
+            > div:first-child {
+                grid-column: 1;
             }
-            &__item-title {
-                display: block;
+            > div:last-child {
+                display: none;
             }
-            
         }
+        &__item-title {
+            display: block;
+        }
+        
+    }
+    .job-info-card {
+        padding: 1rem;
+        font-size: 1rem;
+        list-style: none;
+        gap: 0.5rem;
+    }
     /* --------------------------------- footer --------------------------------- */
     .main-footer {
         &__top {
@@ -298,4 +304,20 @@
             width: 100%;
         }
     }
+    
+    .blocker {
+        padding: 2rem 1rem;
+    }
+    .modal {
+        width: auto;
+        padding: 1rem;
+        &__header {
+            margin-bottom: 2rem;
+        }
+    }
+    .drop-zone {
+        margin: 1.5rem 0;
+    }
 }
+
+
