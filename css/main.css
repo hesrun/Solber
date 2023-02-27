@@ -72,10 +72,6 @@ input, textarea, button {
   background-color: #333434 !important;
 }
 
-.bg-light {
-  background-color: #F7F7F7 !important;
-}
-
 /* ---------------------------------- typo ---------------------------------- */
 a {
   color: #FF5100;
@@ -1508,6 +1504,12 @@ h5:first-child, .h5:first-child {
   }
   .persona__name h4 {
     margin: 0;
+  }
+  .news-card {
+    border-radius: 0.625rem 0.625rem 0.625rem 0.625rem;
+  }
+  .news-card:hover {
+    border-radius: 0.625rem 0.625rem 0.625rem 0.625rem;
   }
   /* ------------------------------- directions ------------------------------- */
   .directions-types {

@@ -218,6 +218,12 @@
             }
         }
     }
+    .news-card {
+        border-radius: .625rem .625rem .625rem .625rem;
+        &:hover {
+            border-radius: .625rem .625rem .625rem .625rem;
+        }
+    }
     /* ------------------------------- directions ------------------------------- */
     .directions-types {
         margin-top: 2rem;
