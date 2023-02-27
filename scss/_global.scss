@@ -178,4 +178,14 @@ h5,.h5 {
         background-position: center;
         background-repeat: repeat-y;
     }
+    &_light {
+        background-image: url(../img/lines/line-light.png);
+        background-position: center;
+        background-repeat: repeat-y;
+    }
+}
+.lines-about-group {
+    background-image: url(../img/lines/group-company-lines.png);
+    background-position: center;
+    background-repeat: repeat-y;
 }

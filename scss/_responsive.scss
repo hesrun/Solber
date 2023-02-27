@@ -139,6 +139,9 @@
     .section-btn {
         max-width: 100%;
         margin-top: 2.5rem;
+        .button {
+            max-width: 100%;
+        }
     }
     .section-header {
         margin-bottom: 24px;
@@ -273,6 +276,14 @@
         font-size: 1rem;
         list-style: none;
         gap: 0.5rem;
+    }
+
+    /* ---------------------------------- about --------------------------------- */
+    .priority-card {
+        border-radius: .625rem 0 0 0;
+    }
+    .employee-card {
+        border-radius: 2.5rem .625rem .625rem .625rem;
     }
     /* --------------------------------- footer --------------------------------- */
     .main-footer {

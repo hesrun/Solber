@@ -204,6 +204,17 @@ h5:first-child, .h5:first-child {
   background-position: center;
   background-repeat: repeat-y;
 }
+.line-left-single_light {
+  background-image: url(../img/lines/line-light.png);
+  background-position: center;
+  background-repeat: repeat-y;
+}
+
+.lines-about-group {
+  background-image: url(../img/lines/group-company-lines.png);
+  background-position: center;
+  background-repeat: repeat-y;
+}
 
 .button {
   font-size: 1rem;
@@ -1425,6 +1436,9 @@ h5:first-child, .h5:first-child {
     max-width: 100%;
     margin-top: 2.5rem;
   }
+  .section-btn .button {
+    max-width: 100%;
+  }
   .section-header {
     margin-bottom: 24px;
   }
@@ -1550,6 +1564,13 @@ h5:first-child, .h5:first-child {
     font-size: 1rem;
     list-style: none;
     gap: 0.5rem;
+  }
+  /* ---------------------------------- about --------------------------------- */
+  .priority-card {
+    border-radius: 0.625rem 0 0 0;
+  }
+  .employee-card {
+    border-radius: 2.5rem 0.625rem 0.625rem 0.625rem;
   }
   /* --------------------------------- footer --------------------------------- */
   .main-footer__top {
