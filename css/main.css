@@ -40,6 +40,10 @@ input, textarea, button {
   text-align: center;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .text-gray-200 {
   color: #E5E5E5 !important;
 }
