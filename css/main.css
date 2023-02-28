@@ -1078,12 +1078,12 @@ h5:first-child, .h5:first-child {
   margin-bottom: 0.75rem;
 }
 
-.jobs-list {
+.table-style-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.jobs-list__item {
+.table-style-list__item {
   padding: 2rem;
   gap: 1rem;
   display: grid;
@@ -1094,24 +1094,24 @@ h5:first-child, .h5:first-child {
   color: inherit;
   text-decoration: none;
 }
-.jobs-list__item > div:last-child {
+.table-style-list__item > div:last-child {
   white-space: nowrap;
   text-align: right;
 }
-.jobs-list__item:hover {
+.table-style-list__item:hover {
   border-color: #FF5100;
 }
-.jobs-list__item:hover > div:last-child {
+.table-style-list__item:hover > div:last-child {
   color: #FF5100;
 }
-.jobs-list__item:active {
+.table-style-list__item:active {
   background: #FF5100;
   color: #fff;
 }
-.jobs-list__item:active > div:last-child {
+.table-style-list__item:active > div:last-child {
   color: white;
 }
-.jobs-list__item-title {
+.table-style-list__item-title {
   display: none;
   font-size: 0.75rem;
   color: #A3A3A3;
@@ -1211,6 +1211,39 @@ h5:first-child, .h5:first-child {
 }
 .partner-link:hover img {
   transform: scale(1.1);
+}
+
+/* --------------------------------- history -------------------------------- */
+.years-list {
+  border-bottom: 1px #F5F5F5 solid;
+  margin-bottom: 3rem;
+}
+.years-list__item {
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  position: relative;
+  color: #A3A3A3;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+.years-list__item:before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  border-radius: 2px 2px 0 0;
+  transition: 0.3s all;
+}
+.years-list__item_active, .years-list__item:hover {
+  color: black;
+}
+.years-list__item_active:before, .years-list__item:hover:before {
+  background-color: #FF5100;
 }
 
 /* --------------------------------- footer --------------------------------- */
@@ -1387,6 +1420,22 @@ h5:first-child, .h5:first-child {
   }
 }
 @media (max-width: 576px) {
+  body::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+  body::-webkit-scrollbar-thumb {
+    background: #FF5100;
+    border-radius: 0.5rem;
+  }
+  body::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 0.5rem;
+  }
+  body {
+    scrollbar-face-color: #FF5100;
+    scrollbar-track-color: transparent;
+  }
   figure {
     margin: 1.5rem 0;
   }
@@ -1543,22 +1592,22 @@ h5:first-child, .h5:first-child {
     align-items: flex-start;
   }
   /* ---------------------------------- jobs ---------------------------------- */
-  .jobs-list {
+  .table-style-list {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  .jobs-list__item {
+  .table-style-list__item {
     padding: 1rem;
     gap: 1rem;
     grid-template-columns: 1fr;
   }
-  .jobs-list__item > div:first-child {
+  .table-style-list__item > div:first-child {
     grid-column: 1;
   }
-  .jobs-list__item > div:last-child {
+  .table-style-list__item > div:last-child {
     display: none;
   }
-  .jobs-list__item-title {
+  .table-style-list__item-title {
     display: block;
   }
   .job-info-card {
@@ -1573,6 +1622,15 @@ h5:first-child, .h5:first-child {
   }
   .employee-card {
     border-radius: 2.5rem 0.625rem 0.625rem 0.625rem;
+  }
+  /* --------------------------------- history -------------------------------- */
+  .years-list {
+    border-bottom: 1px #F5F5F5 solid;
+    margin-bottom: 2.5rem;
+  }
+  .years-list__item {
+    font-size: 1rem;
+    padding: 0.5rem 0;
   }
   /* --------------------------------- footer --------------------------------- */
   .main-footer__top {

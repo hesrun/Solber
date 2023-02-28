@@ -1,5 +1,4 @@
 @media (max-width: 1400px) {
-
 }
 @media (max-width: 1200px) {
     .main-header {
@@ -95,6 +94,9 @@
     }
 }
 @media (max-width: 576px) {
+    body {
+        @include scrollbars(.25rem, $orange-400, transparent);
+    }
     figure {
         margin: 1.5rem 0;
         img {
@@ -258,7 +260,7 @@
         align-items: flex-start;
     }
     /* ---------------------------------- jobs ---------------------------------- */
-    .jobs-list {
+    .table-style-list {
         grid-template-columns: 1fr;
         gap: 1rem;
         &__item {
@@ -291,6 +293,15 @@
     .employee-card {
         border-radius: 2.5rem .625rem .625rem .625rem;
     }
+    /* --------------------------------- history -------------------------------- */
+.years-list {
+    border-bottom: 1px $gray-100 solid;
+    margin-bottom: 2.5rem;
+    &__item {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+    }
+}
     /* --------------------------------- footer --------------------------------- */
     .main-footer {
         &__top {
