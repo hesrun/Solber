@@ -60,10 +60,7 @@
         bottom: 0;
     }
     /* ---------------------------------- jobs ---------------------------------- */
-    .jobs-titles {
-        display: none;
-    }
-    .jobs-list {
+    .table-style-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
@@ -76,6 +73,17 @@
             }
             > div:last-child {
                 display: none;
+            }
+            &_docs {
+                grid-template-columns: 1fr;
+                > div:first-child {
+                    grid-column: 1;
+                }
+                > div:last-child {
+                    margin-top: 2rem;
+                    text-align: left;
+                    display: block;
+                }   
             }
         }
         &__item-title {
@@ -270,9 +278,6 @@
             > div:first-child {
                 grid-column: 1;
             }
-            > div:last-child {
-                display: none;
-            }
         }
         &__item-title {
             display: block;
@@ -294,14 +299,14 @@
         border-radius: 2.5rem .625rem .625rem .625rem;
     }
     /* --------------------------------- history -------------------------------- */
-.years-list {
-    border-bottom: 1px $gray-100 solid;
-    margin-bottom: 2.5rem;
-    &__item {
-        font-size: 1rem;
-        padding: 0.5rem 0;
+    .years-list {
+        border-bottom: 1px $gray-100 solid;
+        margin-bottom: 2.5rem;
+        &__item {
+            font-size: 1rem;
+            padding: 0.5rem 0;
+        }
     }
-}
     /* --------------------------------- footer --------------------------------- */
     .main-footer {
         &__top {

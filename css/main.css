@@ -1070,16 +1070,19 @@ h5:first-child, .h5:first-child {
 }
 
 /* ---------------------------------- jobs ---------------------------------- */
-.jobs-titles {
+.table-style-titles {
   display: grid;
   grid-template-columns: 3fr 2fr 2fr 2fr 2fr 1fr;
   padding: 0 2rem;
   gap: 1rem;
 }
-.jobs-titles__item {
+.table-style-titles__item {
   color: #525252;
   font-size: 0.875rem;
   margin-bottom: 0.75rem;
+}
+.table-style-titles_doc {
+  grid-template-columns: 1fr 10rem 10rem;
 }
 
 .table-style-list {
@@ -1098,6 +1101,14 @@ h5:first-child, .h5:first-child {
   color: inherit;
   text-decoration: none;
 }
+.table-style-list__item_docs {
+  grid-template-columns: 1fr 10rem 10rem;
+  align-items: center;
+}
+.table-style-list__item_docs .icon-download-1 {
+  vertical-align: middle;
+  font-size: 1.5rem;
+}
 .table-style-list__item > div:last-child {
   white-space: nowrap;
   text-align: right;
@@ -1107,13 +1118,6 @@ h5:first-child, .h5:first-child {
 }
 .table-style-list__item:hover > div:last-child {
   color: #FF5100;
-}
-.table-style-list__item:active {
-  background: #FF5100;
-  color: #fff;
-}
-.table-style-list__item:active > div:last-child {
-  color: white;
 }
 .table-style-list__item-title {
   display: none;
@@ -1391,26 +1395,34 @@ h5:first-child, .h5:first-child {
     bottom: 0;
   }
   /* ---------------------------------- jobs ---------------------------------- */
-  .jobs-titles {
-    display: none;
-  }
-  .jobs-list {
+  .table-style-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
-  .jobs-list__item {
+  .table-style-list__item {
     padding: 1rem;
     gap: 1rem;
     grid-template-columns: 1fr 1fr;
   }
-  .jobs-list__item > div:first-child {
+  .table-style-list__item > div:first-child {
     grid-column: 2 span;
   }
-  .jobs-list__item > div:last-child {
+  .table-style-list__item > div:last-child {
     display: none;
   }
-  .jobs-list__item-title {
+  .table-style-list__item_docs {
+    grid-template-columns: 1fr;
+  }
+  .table-style-list__item_docs > div:first-child {
+    grid-column: 1;
+  }
+  .table-style-list__item_docs > div:last-child {
+    margin-top: 2rem;
+    text-align: left;
+    display: block;
+  }
+  .table-style-list__item-title {
     display: block;
   }
 }
@@ -1607,9 +1619,6 @@ h5:first-child, .h5:first-child {
   }
   .table-style-list__item > div:first-child {
     grid-column: 1;
-  }
-  .table-style-list__item > div:last-child {
-    display: none;
   }
   .table-style-list__item-title {
     display: block;

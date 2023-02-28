@@ -493,7 +493,7 @@
     }
 }
 /* ---------------------------------- jobs ---------------------------------- */
-.jobs-titles {
+.table-style-titles {
     display: grid;
     grid-template-columns: 3fr 2fr 2fr 2fr 2fr 1fr;
     padding: 0 2rem;
@@ -502,6 +502,9 @@
         color: $gray-600;
         font-size: .875rem;
         margin-bottom: .75rem;
+    }
+    &_doc {
+        grid-template-columns: 1fr 10rem 10rem;
     }
 }
 .table-style-list {
@@ -518,6 +521,14 @@
         transition: all 0.3s;
         color: inherit;
         text-decoration: none;
+        &_docs {
+            grid-template-columns: 1fr 10rem 10rem;
+            align-items: center;
+            .icon-download-1 {
+                vertical-align: middle;
+                font-size: 1.5rem;
+            }
+        }
         > div:last-child {
             white-space: nowrap;
             text-align: right;
@@ -527,15 +538,7 @@
             > div:last-child {
                 color: $orange-400;
             }
-        }
-        &:active {
-            background: $orange-400;
-            color: #fff;
-            > div:last-child {
-                color: white;
-            }
-        }
-        
+        } 
     }
     &__item-title {
         display: none;
