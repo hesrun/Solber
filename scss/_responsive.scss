@@ -91,6 +91,32 @@
         }
         
     }
+    /* -------------------------------- structure ------------------------------- */
+    .structure {
+        gap: 1.5rem;
+        &:before {
+            display: none !important;
+        }
+        &__row {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;   
+        }
+        &__item {
+            &:before,
+            &:after {
+                display: none !important;
+            }
+            &_clear {
+                display: none;
+            }
+            &_head {
+                height: 8.75rem;
+                img {
+                    height: 48px;
+                }
+            }
+        }
+    }
 }
 @media (max-width: 768px) {
     .container {
