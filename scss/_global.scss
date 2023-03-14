@@ -161,12 +161,58 @@ h5,.h5 {
     }
 }
 
-
-
 /* ---------------------------------- lines --------------------------------- */
+.lines-cars {
+    background-image: url(../img/lines/land-cars-lines.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.line-company {
+    background-image: url(../img/lines/company-lines.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.line-weights {
+    background-image: url(../img/lines/weight-lines.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.line-weights {
+    background-image: url(../img/lines/weight-lines.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.lines-geography {
+    background-image: url(../img/lines/geographi-lines.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.lines-directions {
+    background-image: url(../img/lines/directions-lines.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.lines-persona {
+    background-image: url(../img/lines/persona-lines.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+.lines-news {
+    background-image: url(../img/lines/news-lines.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+
+
 .line-left-start {
     background-image: url(../img/lines/angle-line.png);
     background-position: center 3.125rem;
+    background-repeat: no-repeat;
+}
+.line-left-end {
+    background-image: url(../img/lines/angle-line.png);
+    background-position: center bottom;
     background-repeat: no-repeat;
 }
 .line-left-single {
