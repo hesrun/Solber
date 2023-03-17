@@ -11,12 +11,12 @@
     }
     &::-webkit-scrollbar-thumb {
       background: $foreground-color;
-      border-radius: .5rem;
     }
   
     &::-webkit-scrollbar-track {
       background: $background-color;
       border-radius: .5rem;
+      
     }
     & {
       scrollbar-face-color: $foreground-color;

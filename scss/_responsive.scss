@@ -1,4 +1,12 @@
 @media (max-width: 1400px) {
+    .priority-3d {
+        .swiper-slide-prev-1,
+        .swiper-slide-next-1 {
+            z-index: 1;
+            opacity: 0;
+            transform: scale(0.5);
+        }
+    }
 }
 @media (max-width: 1200px) {
     .main-header {
@@ -51,6 +59,52 @@
                 color: $orange-400;
             }
         }
+    }
+/* ---------------------------------- lines --------------------------------- */
+    .lines-cars {
+        background-image: none
+    }
+    .line-company {
+        background-image: none
+    }
+    .line-weights {
+        background-image: none
+    }
+    .line-weights {
+        background-image: none
+    }
+    .lines-geography {
+        background-image: none
+    }
+    .lines-directions {
+        background-image: none
+    }
+    .lines-persona {
+        background-image: none
+    }
+    .lines-news {
+        background-image: none
+    }
+    
+    
+    
+    .line-left-start {
+        background-image: none
+    }
+    .line-left-end {
+        background-image: none
+    }
+    .line-left-single {
+        background-image: none;
+        &_dark {
+            background-image: none;
+        }
+        &_light {
+            background-image: none;
+        }
+    }
+    .lines-about-group {
+        background-image: none;
     }
 }
 @media (max-width: 992px) {
@@ -368,6 +422,12 @@
         &__text {
             margin-bottom: 2rem;
         }
+    }
+    /* ---------------------------------- lines --------------------------------- */
+    .lines-cars {
+        background-image: url(../img/lines/land-cars-lines-mob.png);
+        background-position: right bottom;
+        background-repeat: no-repeat;
     }
 
     /* ----------------------------------- ui ----------------------------------- */

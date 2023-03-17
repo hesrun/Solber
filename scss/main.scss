@@ -160,6 +160,81 @@
         }
     }
 }
+
+.priority-section {
+    overflow: hidden;
+}
+
+.flipster--carousel {
+    .flipster__item--past-1,
+    .flipster__item--future-1 {
+        opacity: 1;
+        .flipster__item__content {
+            transform: scale(0.75)
+        }
+    }
+    .flipster__item--past-2,
+    .flipster__item--future-2 {
+        opacity: 1;
+        .flipster__item__content {
+            transform: scale(0.5)
+        }
+    }
+    .priority-card {
+        box-shadow: $shadow-large;
+        width: 21.25rem;
+    }
+}
+.carusel3d-nav {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.priority-nav-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    .swiper-pagination {
+        width: auto !important;
+    }
+}
+.priority-mobile {
+    .priority-card {
+        box-shadow: $shadow-medium;
+    }
+}
+.flipster {
+    $root: &;
+    overflow: visible;
+    &__nav {
+        margin: 0px 1.5rem;
+        &__item {
+            margin: 0 .25rem;
+        }
+        &__link {
+            width: .5rem;
+            height: .5rem;
+            border-radius: .5rem;
+            background: black;
+            opacity: 0.2;
+            padding: 0;
+            text-indent: -9999px;
+            &:after {
+                display: none;
+            }   
+        }
+    }
+    &__nav__item--current {
+        .flipster__nav__link {
+            width: 1.5rem;
+            background: $orange-400;
+            opacity: 1;
+        }
+    }
+}
+
 .direction-card {
     $root: &;
     padding: 2.5rem;
@@ -390,43 +465,6 @@
     height: 500px;
     position: relative;
     width: 100%;
-    .bespoke-slide {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-top: -240px;
-        margin-left: -151px;
-        img {
-            vertical-align: middle;
-            box-shadow: $shadow-medium;
-        }
-        transition: transform, opacity, 0.3s;
-    }
-    .bespoke-inactive {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    .bespoke-before-1 {
-        transform: scale(0.8) translateX(-50%);
-        opacity: 1;
-        z-index: 1;
-    }
-    .bespoke-before-2 {
-        transform: scale(0.6) translateX(-125%);
-        opacity: 1;
-    }
-    .bespoke-after-1 {
-        transform: scale(0.8) translateX(50%);
-        opacity: 1;
-        z-index: 1;
-    }
-    .bespoke-after-2 {
-        transform: scale(0.6) translateX(125%);
-        opacity: 1;
-    }
-    .bespoke-active {
-        z-index: 2;
-    }
 }
 .slider-nav-btns {
     display: flex;
@@ -568,7 +606,19 @@
 }
 .job-request {
     textarea {
-        min-height: 13.5rem;
+        min-height: 10.65rem;
+    }
+}
+.request-status {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    strong {
+        display: block;
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+    span {
+        color: $gray-400;
     }
 }
 /* ---------------------------------- about --------------------------------- */
@@ -576,6 +626,8 @@
     overflow: hidden;
 }
 .priority-card {
+    margin: auto;
+    max-width: 21.25rem;
     padding-top: 9.5rem;
     padding-left: 24px;
     padding-right: 24px;

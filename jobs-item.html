@@ -287,21 +287,24 @@
             <div class="row gy-4 gy-lg-0">
                 <div class="col-lg-6">
                     <div class="field">
-                        <input class="field__input" type="text" required="">
+                        <input class="field__input" type="text" placeholder="Ваше имя и фамилия">
                         <div class="field__label">Ваше имя и фамилия *</div>
                     </div>
-                    <div class="field">
-                        <input class="field__input" type="text" required="">
+                    <div class="field field_novalid">
+                        <input class="field__input" type="tel" placeholder="Телефон">
                         <div class="field__label">Телефон *</div>
+                        <div class="field__error">Error text</div>
                     </div>
                     <div class="field">
-                        <input class="field__input" type="text" required="">
+                        <input class="field__input" type="email" placeholder="E-mail">
                         <div class="field__label">E-mail</div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="field">
-                        <textarea class="field__input field__input_textarea" required="" placeholder="Комментарий"></textarea>
+                    <div class="field field_textarea">
+                        <textarea id="commentText" maxlength="800" class="field__input field__input_textarea" placeholder="Комментарий"></textarea>
+                        <div class="field__label">Комментарий</div>
+                        <div class="field__counter"><span id="commentCounter">0</span>/800 символов</div>
                     </div>
                 </div>
             </div>
@@ -312,6 +315,24 @@
                     <span class="text-gray-400 drop-zone__rules">Не более 2 файлов в формате JPG, PNG или PDF , до 10 мегабайт</span>
                 </div>
             </label>
+            <div class="files-list">
+                <div class="files-list__item">
+                    <img class="files-list__img" src="img/jobs/document.png" alt="">
+                    <div class="files-list__info">
+                        <div class="files-list__name">Резюме Константинопольский Константин Константинович.pdf</div>
+                        <div class="files-list__data">21.06.2022, 16:03:34 • 532 Кб</div>
+                    </div>
+                    <div class="files-list__remove icon-close"></div>
+                </div>
+                <div class="files-list__item">
+                    <img class="files-list__img" src="img/jobs/document.png" alt="">
+                    <div class="files-list__info">
+                        <div class="files-list__name">Резюме Константинопольский Константин Константинович.pdf</div>
+                        <div class="files-list__data">21.06.2022, 16:03:34 • 532 Кб</div>
+                    </div>
+                    <div class="files-list__remove icon-close"></div>
+                </div>
+            </div>
             <label class="check" for="politic">
                 <input class="check__input-check" id="politic" type="checkbox">
                 <div class="check__text">
@@ -324,8 +345,20 @@
                     Подтверждаю свое согласие на <a href=""><strong>Обработку персональных данных</strong></a>    
                 </div>
             </label>
-            <button type="submit" class="lg-2 mt-lg-4 button button_orange button_filled button_m-full">Отправить</button>
+            <a  href="#success" rel="modal:open" class="lg-2 mt-lg-4 button button_orange button_filled button_m-full">Отправить</a>
         </form>
+    </div>
+
+    <div id="success" class="modal modal_small">
+        <div class="modal__header">
+            <a href="#" rel="modal:close" class="modal__close icon-close"></a>
+        </div>
+        <div class="request-status">
+            <img src="img/jobs/green-check.svg" alt="">
+            <strong>Ваш отклик на вакансию успешно отправлен</strong>
+            <span>Наши менеджеры по персоналу свяжутся с вами в течение 7 дней и дадут обратную связь</span>
+        </div>
+        <a href="" class="button button_green button_filled button_full">Хорошо</a>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -333,6 +366,12 @@
     <script src="js/main.js"></script>
     <script>
         $("#jobRequest").modal();
+
+        $('#commentText').on('keyup', function(){
+            count = $(this).val().length;
+            console.log(count);
+            $('#commentCounter').text(count);
+        })
     </script>
 </body>
 </html>
