@@ -233,14 +233,15 @@
                         </ul>
                     </div>
                     <div class="carusel3d-nav">
-                        <button id="priorPrevMob" class="slider-nav-btn">
+                        <button id="priorPrevDesc" class="slider-nav-btn">
                             <i class="icon-arrow-left"></i>
                         </button>
-                        <button id="priorNextMob" class="slider-nav-btn">
+                        <button id="priorNextDesc" class="slider-nav-btn">
                             <i class="icon-arrow-right"></i>
                         </button>
                     </div>
                 </div>
+
                 <div class="col-12 d-md-none">
                     <div id="priorityListMob" class="pt-3 swiper priority-mobile">
                         <div class="swiper-wrapper">
@@ -686,6 +687,7 @@
     <script>
 
         $("#cookies").modal();
+        
 
         var myFlipster = $('#priorityListDesc').flipster({
             style: 'carousel',
@@ -697,13 +699,15 @@
             touch: false,
             nav: 'after'
         });
-        $('#priorPrevMob').click(function(){
+        $('#priorPrevDesc').click(function(){
             myFlipster.flipster('prev')
         })
-        $('#priorNextMob').click(function(){
+        $('#priorNextDesc').click(function(){
             myFlipster.flipster('next')
         });
-        $('#priorPrevMob').after($('.flipster__nav'));
+        $('#priorPrevDesc').after($('.flipster__nav'));
+
+
 
         var priorityMob = new Swiper("#priorityListMob", {
             slidesPerView: 1,
