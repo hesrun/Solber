@@ -239,9 +239,100 @@
                         <a href="" class="button button_white button_filled button_full">Все события</a>
                     </div>
                 </div>
-                <div class="d-none d-lg-block col-lg-6 offset-lg-1">
+                <div class="d-none d-lg-block">
                     <div class="chrono-graph">
-                        <img src="img/about/chrono.svg" alt="">
+                        <div id="chronoList" class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide chrono-graph__item chrono-graph__item_top">
+                                    <div class="chrono-graph__text">
+                                        <div class="chrono-graph__date">
+                                            28 апреля 2012
+                                        </div>
+                                        <span class="chrono-graph__descr">
+                                            Дата основания ГК «Кубис»
+                                        </span>
+                                    </div>
+                                    <div class="chrono-graph__point"></div>
+                                </div>
+                                <div class="swiper-slide chrono-graph__item chrono-graph__item_bottom">
+                                    <div class="chrono-graph__text">
+                                        <div class="chrono-graph__date">
+                                            20 мая 2013
+                                        </div>
+                                        <span class="chrono-graph__descr">
+                                            Дата основания «Неруд Центр»
+                                        </span>
+                                    </div>
+                                    <div class="chrono-graph__point"></div>
+                                </div>
+                                <div class="swiper-slide chrono-graph__item chrono-graph__item_top">
+                                    <div class="chrono-graph__text">
+                                        <div class="chrono-graph__date">
+                                            Весна 2015
+                                        </div>
+                                        <span class="chrono-graph__descr">
+                                            Старт и начало развития нерудного направления
+                                        </span>
+                                    </div>
+                                    <div class="chrono-graph__point"></div>
+                                </div>
+                                <div class="swiper-slide chrono-graph__item chrono-graph__item_bottom">
+                                    <div class="chrono-graph__text">
+                                        <div class="chrono-graph__date">
+                                            Май 2017
+                                        </div>
+                                        <span class="chrono-graph__descr">
+                                            Запуск автоколонны, покупка первой сцепки
+                                        </span>
+                                    </div>
+                                    <div class="chrono-graph__point"></div>
+                                </div>
+                                <div class="swiper-slide chrono-graph__item chrono-graph__item_top">
+                                    <div class="chrono-graph__text">
+                                        <div class="chrono-graph__date">
+                                            Май 2018
+                                        </div>
+                                        <span class="chrono-graph__descr">
+                                            Lorem ipsum dolor sit amet consectetur.
+                                        </span>
+                                    </div>
+                                    <div class="chrono-graph__point"></div>
+                                </div>
+                                <div class="swiper-slide chrono-graph__item chrono-graph__item_bottom">
+                                    <div class="chrono-graph__text">
+                                        <div class="chrono-graph__date">
+                                            Май 2020
+                                        </div>
+                                        <span class="chrono-graph__descr">
+                                            Lorem ipsum dolor sit amet consectetur.
+                                        </span>
+                                    </div>
+                                    <div class="chrono-graph__point"></div>
+                                </div>
+                                <div class="swiper-slide chrono-graph__item chrono-graph__item_top">
+                                    <div class="chrono-graph__text">
+                                        <div class="chrono-graph__date">
+                                            Май 2021
+                                        </div>
+                                        <span class="chrono-graph__descr">
+                                            Lorem ipsum dolor sit amet consectetur.
+                                        </span>
+                                    </div>
+                                    <div class="chrono-graph__point"></div>
+                                </div>
+                                <div class="swiper-slide chrono-graph__item chrono-graph__item_bottom">
+                                    <div class="chrono-graph__text">
+                                        <div class="chrono-graph__date">
+                                            Май 2022
+                                        </div>
+                                        <span class="chrono-graph__descr">
+                                            Lorem ipsum dolor sit amet consectetur.
+                                        </span>
+                                    </div>
+                                    <div class="chrono-graph__point"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -689,7 +780,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.5/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        var swiper = new Swiper("#priorityList", {
+
+        var chronoList = new Swiper("#chronoList", {
+            slidesPerView: 'auto',
+            spaceBetween: 0,
+            freeMode: true,
+
+        });
+
+
+        var priorityList = new Swiper("#priorityList", {
             slidesPerView: 1,
             spaceBetween: 0,
             navigation: {
@@ -711,19 +811,8 @@
                 },
             },
         });
-        var swiper = new Swiper("#teamList", {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                }
-            },
-        });
-        var swiper = new Swiper("#partnersList", {
+
+        var teamList = new Swiper("#teamList", {
             slidesPerView: 1,
             spaceBetween: 0,
             pagination: {
@@ -736,8 +825,18 @@
             },
         });
 
-        
-
+        var partnersList = new Swiper("#partnersList", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                }
+            },
+        });
         
 
     </script>

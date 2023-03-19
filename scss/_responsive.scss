@@ -216,6 +216,11 @@
         margin-bottom: 0.5rem;
         margin-top: 0.5rem;
     }
+    blockquote {
+        margin: 1rem 0;
+        padding-left: 1rem;
+        font-size: 1rem;
+    }
     .section-space {
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
@@ -244,7 +249,14 @@
             object-position: center;
         }
     }
-
+    /* --------------------------------- cookies -------------------------------- */
+    .cookies-access {
+        align-items: flex-start;
+        gap: 2rem;
+        &__btn {
+            margin-top: 1.75rem;
+        }
+    }
     /* ---------------------------------- index --------------------------------- */
     .counters-statistic {
         margin-top: 2.5rem;

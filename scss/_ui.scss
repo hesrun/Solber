@@ -83,12 +83,12 @@
         }
         &#{$root}_outline {
             &:hover {
-                border-color: $orange-500;
-                color: $orange-500;
+                background-color: $graphite;
+                color: white;
             }
             &:active {
-                border-color: $orange-600;
-                color: $orange-600;
+                border-color: lighten($graphite, 10);
+                background-color: lighten($graphite, 10);
             }
         }
     }
@@ -249,6 +249,42 @@
     }
 }
 
+.toggle {
+    display: inline-block;
+    width: 2.5rem;
+    height: 24px;
+    cursor: pointer;
+    input {
+        display: none;
+        &:checked ~ .toggle__btn {
+            background: $orange-400;
+            &:before {
+                left: 1.3125rem;
+            }
+        }
+    }
+    &__btn {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 1.5rem;
+        background: $gray-400;
+        transition: 0.3s all cubic-bezier(.5,-0.5,.5,1.5);
+        &:before {
+            content: "";
+            position: absolute;
+            left: .3125rem;
+            top: .3125rem;
+            display: block;
+            width: .875rem;
+            height: .875rem;
+            border-radius: 50%;
+            background: white;
+            transition: 0.3s all cubic-bezier(.5,-1,.5,2);
+        }
+    }
+}
+
 .slider-nav-btn {
     cursor: pointer;
     display: inline-flex;
@@ -289,6 +325,8 @@
     align-items: center;
     list-style: none;
     font-size: .875rem;
+    margin: 0;
+    padding: 0;
     margin-bottom: 3.5rem;
     gap: .5rem;
     .icon-arrow-left {
@@ -381,6 +419,7 @@
     backdrop-filter: blur(3px);
     z-index: 100;
 }
+
 .modal {
     max-width: 62rem;
     box-shadow: $shadow-medium;
