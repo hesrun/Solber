@@ -46,10 +46,14 @@
             gap: 2.5rem 0;
         }
         &__sub-links {
+            width: auto;
             box-shadow: none;
             background: none;
             position: static;
-            display: block
+            display: block;
+            &::before {
+                display: none;
+            }
         }
         &__sub-link {
             padding: 0;
@@ -264,17 +268,6 @@
     .finance-graph {
         &__bar {
             border-radius: 2.5rem .625rem .625rem 0rem;
-            &_first {
-                height: 10.625rem;
-            }
-            &_second {
-                height: 15.625rem;
-                margin-left: -0.5rem;
-            }
-            &_fird {
-                height: 21.875rem;
-                margin-left: -0.5rem;
-            }
         }
         &__bar-label {
             font-size: 1rem;
@@ -384,6 +377,20 @@
     }
 
     /* ---------------------------------- about --------------------------------- */
+    .company-counts {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        &__item {
+            display: flex;
+            align-items: center;
+            border-left: 1px $gray-200 solid;
+            padding: 0.5rem 0 0.5rem 1rem;
+            gap: 1rem;
+        }
+        b {
+            font-size: 2rem;
+        }
+    }
     .priority-card {
         border-radius: .625rem 0 0 0;
     }

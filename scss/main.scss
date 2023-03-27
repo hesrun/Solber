@@ -60,6 +60,18 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        width: 366px;
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            left: -30px;
+            right: -30px;
+            height: 30px;
+            background: #fff;
+            top: -30px;
+            pointer-events: none;
+        }
     }
     &__sub-links-item {
         margin: 0;
@@ -165,9 +177,6 @@
 }
 .counters-statistic {
     margin-top: 6rem;
-    &_about {
-        margin-top: 3rem;
-    }
     &__item {
         display: flex;
         align-items: center;
@@ -195,7 +204,6 @@
 .priority-section {
     overflow: hidden;
 }
-
 .flipster--carousel {
     .flipster__item--past-1,
     .flipster__item--future-1 {
@@ -399,6 +407,7 @@
     }
 }
 .finance-graph {
+    $root: &;
     flex: 1 1 auto;
     margin-left: auto;
     &__cols {
@@ -407,23 +416,37 @@
     }
     &__col {
         flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 26.25rem;
     }
     &__bar {
         box-shadow: 0px .5rem .5rem rgba(38, 38, 38, 0.25);
         border-radius: 2.5rem .625rem .625rem 0rem;
+        transition: all 1.5s;
         &_first {
             background: #444646;
-            height: 10.625rem;
+            height: 0rem;
+            &.active {
+                height: 10.625rem;
+            }
         }
         &_second {
             background: #656565;
-            height: 15.625rem;
+            height: 0rem;
             margin-left: -0.5rem;
+            &.active {
+                height: 15.625rem;
+            }
         }
         &_fird {
             background: #868888;
-            height: 21.875rem;
+            height: 0rem;
             margin-left: -0.5rem;
+            &.active {
+                height: 21.875rem;
+            }
         }
     }
     &__bar-label {
@@ -482,15 +505,17 @@
         }
         &:after {
             content: "";
-            left: -41px;
-            top: -6px;
-            position: absolute;
             display: block;
+            position: absolute;
             width: 2rem;
             height: 2rem;
-            border: 1px #fff solid;
+            left: -40px;
+            top: -5px;
             border-radius: 50%;
-            animation: 2s Pulse infinite linear;
+            background: white;
+            transform: scale(0);
+            transition: 0.3s all;
+            animation: 1.5s chronoPulse infinite;
         }
     }
     
@@ -505,8 +530,6 @@
     align-items: center;
     gap: 2rem;
 }
-
-
 /* ------------------------------- directions ------------------------------- */
 .directions-types {
     display: flex;
@@ -658,6 +681,26 @@
     }
 }
 /* ---------------------------------- about --------------------------------- */
+.company-counts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    &__item {
+        display: flex;
+        align-items: center;
+        border-left: 1px $gray-200 solid;
+        padding: 0.5rem 0 0.5rem 1.5rem;
+        gap: 1.5rem;
+    }
+    b {
+        font-size: 2.5rem;
+    }
+    span {
+        font-weight: 400;
+        color: $gray-400;
+        text-transform: uppercase;
+    }
+}
 .chrono-section {
     overflow: hidden;
     position: relative;
@@ -840,6 +883,43 @@
         img {
             transform: scale(1.1);
         }
+    }
+}
+
+.big-logo-pulse {
+    display: inline-block;
+    position: relative;
+    img {
+        vertical-align: middle;
+    }
+    &__line {
+        position: absolute;
+        border-radius: 50%;
+        animation: linePulse 3s infinite linear;
+        &_one {
+            inset: -3rem;
+            border: 4px rgba($orange-400,0.65) solid;
+        }
+        &_two {
+            inset: -5rem;
+            border: 3px rgba($orange-400,0.35) solid;
+        }
+        &_three {
+            inset: -7rem;
+            border: 2px rgba($orange-400,0.1) solid;
+        }
+    }
+}
+
+@keyframes linePulse {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 /* --------------------------------- history -------------------------------- */
@@ -1143,21 +1223,6 @@
                 color: $orange-400;
             }
         }
-    }
-}
-
-@keyframes Pulse {
-    0% {
-        opacity: 1;
-        transform: scale(1)
-    }
-    50% {
-        opacity: .6;
-        transform: scale(1.2)
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1)
     }
 }
 

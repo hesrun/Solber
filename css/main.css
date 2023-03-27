@@ -817,6 +817,18 @@ h5:first-child, .h5:first-child {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 366px;
+}
+.main-header__sub-links::before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: -30px;
+  right: -30px;
+  height: 30px;
+  background: #fff;
+  top: -30px;
+  pointer-events: none;
 }
 .main-header__sub-links-item {
   margin: 0;
@@ -926,9 +938,6 @@ h5:first-child, .h5:first-child {
 
 .counters-statistic {
   margin-top: 6rem;
-}
-.counters-statistic_about {
-  margin-top: 3rem;
 }
 .counters-statistic__item {
   display: flex;
@@ -1167,24 +1176,38 @@ h5:first-child, .h5:first-child {
 }
 .finance-graph__col {
   flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 26.25rem;
 }
 .finance-graph__bar {
   box-shadow: 0px 0.5rem 0.5rem rgba(38, 38, 38, 0.25);
   border-radius: 2.5rem 0.625rem 0.625rem 0rem;
+  transition: all 1.5s;
 }
 .finance-graph__bar_first {
   background: #444646;
+  height: 0rem;
+}
+.finance-graph__bar_first.active {
   height: 10.625rem;
 }
 .finance-graph__bar_second {
   background: #656565;
-  height: 15.625rem;
+  height: 0rem;
   margin-left: -0.5rem;
+}
+.finance-graph__bar_second.active {
+  height: 15.625rem;
 }
 .finance-graph__bar_fird {
   background: #868888;
-  height: 21.875rem;
+  height: 0rem;
   margin-left: -0.5rem;
+}
+.finance-graph__bar_fird.active {
+  height: 21.875rem;
 }
 .finance-graph__bar-label {
   text-align: center;
@@ -1245,15 +1268,17 @@ h5:first-child, .h5:first-child {
 }
 .map-afiliates__point:after {
   content: "";
-  left: -41px;
-  top: -6px;
-  position: absolute;
   display: block;
+  position: absolute;
   width: 2rem;
   height: 2rem;
-  border: 1px #fff solid;
+  left: -40px;
+  top: -5px;
   border-radius: 50%;
-  animation: 2s Pulse infinite linear;
+  background: white;
+  transform: scale(0);
+  transition: 0.3s all;
+  animation: 1.5s chronoPulse infinite;
 }
 
 .company-cards {
@@ -1425,6 +1450,27 @@ h5:first-child, .h5:first-child {
 }
 
 /* ---------------------------------- about --------------------------------- */
+.company-counts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+.company-counts__item {
+  display: flex;
+  align-items: center;
+  border-left: 1px #E5E5E5 solid;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  gap: 1.5rem;
+}
+.company-counts b {
+  font-size: 2.5rem;
+}
+.company-counts span {
+  font-weight: 400;
+  color: #A3A3A3;
+  text-transform: uppercase;
+}
+
 .chrono-section {
   overflow: hidden;
   position: relative;
@@ -1725,6 +1771,42 @@ h5:first-child, .h5:first-child {
   transform: scale(1.1);
 }
 
+.big-logo-pulse {
+  display: inline-block;
+  position: relative;
+}
+.big-logo-pulse img {
+  vertical-align: middle;
+}
+.big-logo-pulse__line {
+  position: absolute;
+  border-radius: 50%;
+  animation: linePulse 3s infinite linear;
+}
+.big-logo-pulse__line_one {
+  inset: -3rem;
+  border: 4px rgba(255, 81, 0, 0.65) solid;
+}
+.big-logo-pulse__line_two {
+  inset: -5rem;
+  border: 3px rgba(255, 81, 0, 0.35) solid;
+}
+.big-logo-pulse__line_three {
+  inset: -7rem;
+  border: 2px rgba(255, 81, 0, 0.1) solid;
+}
+
+@keyframes linePulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 /* --------------------------------- history -------------------------------- */
 .years-list {
   border-bottom: 1px #F5F5F5 solid;
@@ -2015,20 +2097,6 @@ h5:first-child, .h5:first-child {
   color: #FF5100;
 }
 
-@keyframes Pulse {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 @media (max-width: 1400px) {
   .priority-3d .swiper-slide-prev-1,
   .priority-3d .swiper-slide-next-1 {
@@ -2072,10 +2140,14 @@ h5:first-child, .h5:first-child {
     gap: 2.5rem 0;
   }
   .main-header__sub-links {
+    width: auto;
     box-shadow: none;
     background: none;
     position: static;
     display: block;
+  }
+  .main-header__sub-links::before {
+    display: none;
   }
   .main-header__sub-link {
     padding: 0;
@@ -2296,17 +2368,6 @@ h5:first-child, .h5:first-child {
   .finance-graph__bar {
     border-radius: 2.5rem 0.625rem 0.625rem 0rem;
   }
-  .finance-graph__bar_first {
-    height: 10.625rem;
-  }
-  .finance-graph__bar_second {
-    height: 15.625rem;
-    margin-left: -0.5rem;
-  }
-  .finance-graph__bar_fird {
-    height: 21.875rem;
-    margin-left: -0.5rem;
-  }
   .finance-graph__bar-label {
     font-size: 1rem;
   }
@@ -2406,6 +2467,20 @@ h5:first-child, .h5:first-child {
     gap: 0.5rem;
   }
   /* ---------------------------------- about --------------------------------- */
+  .company-counts {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .company-counts__item {
+    display: flex;
+    align-items: center;
+    border-left: 1px #E5E5E5 solid;
+    padding: 0.5rem 0 0.5rem 1rem;
+    gap: 1rem;
+  }
+  .company-counts b {
+    font-size: 2rem;
+  }
   .priority-card {
     border-radius: 0.625rem 0 0 0;
   }

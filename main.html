@@ -686,7 +686,20 @@
     <script src="js/main.js"></script>
     <script>
 
-        $("#cookies").modal();
+        //$("#cookies").modal();
+
+
+        var graphPos = $('.finance-graph').offset().top;
+        var winH = $(window).height();
+
+        console.log(winH);
+
+        $(window).scroll(function(){
+            scTop = $(this).scrollTop();
+            if (scTop > (graphPos - (winH/2))) {
+                $('.finance-graph__bar').addClass('active');
+            }
+        })
         
 
         var myFlipster = $('#priorityListDesc').flipster({
