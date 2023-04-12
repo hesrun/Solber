@@ -584,4 +584,20 @@
     }
 }
 
+@media (max-width: 400px) {
+    .map-afiliates {
+        &_interactive {
+            .map-afiliates__point_spb {
+                left: 18.5%;
+            }
+            .map-afiliates__point_msk {
+                left: 16%;
+            }
+            .map-afiliates__point_krasnodar {
+                left: 10%;
+            }
+        }
+    }
+}
+
 

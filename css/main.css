@@ -2715,3 +2715,14 @@ h5:first-child, .h5:first-child {
     margin: 1.5rem 0;
   }
 }
+@media (max-width: 400px) {
+  .map-afiliates_interactive .map-afiliates__point_spb {
+    left: 18.5%;
+  }
+  .map-afiliates_interactive .map-afiliates__point_msk {
+    left: 16%;
+  }
+  .map-afiliates_interactive .map-afiliates__point_krasnodar {
+    left: 10%;
+  }
+}
