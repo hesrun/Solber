@@ -2516,15 +2516,15 @@ h5:first-child, .h5:first-child {
     transform: scale(0.75);
   }
   .map-afiliates__point_spb {
-    left: 30.5%;
+    left: 142px;
     top: 56%;
   }
   .map-afiliates__point_msk {
-    left: 28%;
+    left: 125px;
     top: 69.5%;
   }
   .map-afiliates__point_krasnodar {
-    left: 13%;
+    left: 60px;
     top: 96%;
   }
   .map-afiliates__directions-text {
@@ -2574,7 +2574,7 @@ h5:first-child, .h5:first-child {
     height: 5rem;
   }
   .directions-types__icon img {
-    width: 100%;
+    width: 80%;
   }
   .flights-bg {
     background-image: none;
