@@ -141,7 +141,7 @@
         </div>
     </section>
 
-    <section class="section-space bg-graphite text-white geography-section line-left-single_dark">
+    <section class="section-space bg-graphite text-white geography-section geography-section_directions line-left-single_dark">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
@@ -153,19 +153,43 @@
                         <p>На сегодняшний день офисы компании расположены в трех городах Российской Федерации: Москве, Санкт-Петербурге и Краснодаре</p>
                     </div>
                     <div class="directions-types">
-                        <div class="directions-types__icon">
-                            <img src="img/icons/truck.svg" alt="">
+                        <div attr-map-link="track" class="directions-types__icon">
+                            <img src="img/directions/track-normal.svg" alt="">
+                            <img class="directions-types__icon-color" src="img/directions/track-color.svg" alt="">
                         </div>
-                        <div class="directions-types__icon">
-                            <img src="img/icons/train.svg" alt="">
+                        <div attr-map-link="ship" class="directions-types__icon">
+                            <img src="img/directions/ship-normal.svg" alt="">
+                            <img class="directions-types__icon-color" src="img/directions/ship-color.svg" alt="">
                         </div>
-                        <div class="directions-types__icon">
-                            <img src="img/icons/ship.svg" alt="">
+                        <div attr-map-link="train" class="directions-types__icon">
+                            <img src="img/directions/train-normal.svg" alt="">
+                            <img class="directions-types__icon-color" src="img/directions/train-color.svg" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="map-afiliates">
-                    <img src="img/index/russia.svg" alt="">
+                <div class="map-afiliates map-afiliates_interactive">
+                    <img src="img/directions/map.svg" alt="">
+                    <div attr-map="track" class="map-afiliates__directions">
+                        <img src="img/directions/map-track.svg" alt="">
+                        <div class="map-afiliates__directions-text">
+                            <b>Авто</b>
+                            <span>москва <br> и соседние регионы</span>
+                        </div>
+                    </div>
+                    <div attr-map="ship" class="map-afiliates__directions">
+                        <img src="img/directions/map-ship.svg" alt="">
+                        <div class="map-afiliates__directions-text">
+                            <b>Вода</b>
+                            <span>Бассейн <br> реки волги</span>
+                        </div>
+                    </div>
+                    <div attr-map="train" class="map-afiliates__directions">
+                        <img src="img/directions/map-train.svg" alt="">
+                        <div class="map-afiliates__directions-text">
+                            <b>ЖД</b>
+                            <span>вся <br> россия</span>
+                        </div>
+                    </div>
                     <div class="map-afiliates__point map-afiliates__point_spb">
                         Санкт-Петербург
                     </div>
@@ -331,7 +355,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        
+        $('[attr-map-link]').hover(
+        function() {
+            $('[attr-map="'+$(this).attr('attr-map-link')+'"]').addClass('map-afiliates__directions_active');
+        }, function() {
+            $('[attr-map]').removeClass('map-afiliates__directions_active');
+        }
+        );
 
     </script>
 </body>

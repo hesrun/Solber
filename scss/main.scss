@@ -470,27 +470,38 @@
     position: relative;
     overflow: hidden;
     min-height: 40rem;
+    &_directions {
+        display: flex;
+        align-items: center;
+        min-height: 47.5rem;
+    }
 }
 .map-afiliates {
+    padding: 0;
     position: absolute;
     left: 58%;
     bottom: 3.75rem;
-    img {
+    width: auto;
+    &_interactive {
+        left: 45%;
+        bottom: 5rem;
+    }
+    > img {
         vertical-align: middle;
     }
     &__point {
         position: absolute;
         &_spb {
-            left: 145px;
-            top: 285px;
+            left: 13.5%;
+            top: 47%;
         }
         &_msk {
-            left: 138px;
-            top: 350px;
+            left: 13%;
+            top: 57.5%;
         }
         &_krasnodar {
-            left: 62px;
-            top: 480px;
+            left: 5.5%;
+            top: 79%;
         }
         &:before {
             content: "";
@@ -518,6 +529,36 @@
             animation: 1.5s chronoPulse infinite;
         }
     }
+    &__directions {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+        &_active {
+            opacity: 1;
+        }
+        &-text {
+            position: absolute;
+            width: 100%;
+            bottom: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            b {
+                font-size: 2.5rem;
+            }
+            span {
+                line-height: 1.4;
+                font-weight: 300;
+                text-transform: uppercase;
+                border-left: 1px white solid;
+                padding-left: 1rem;
+                margin-left: 1rem;
+            }
+        }
+    }
     
 }
 .company-cards {
@@ -536,6 +577,7 @@
     margin-top: 4rem;
     gap: 2rem;
     &__icon {
+        position: relative;
         width: 7.5rem;
         height: 7.5rem;
         flex: 0 0 auto;
@@ -544,6 +586,26 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform:  translate(-50%, -50%);
+            vertical-align: middle;
+            transition: all 0.3s;
+        }
+        &-color {
+            opacity: 0;
+        }
+        &:hover {
+            img {
+                opacity: 0;
+            }
+            .directions-types__icon-color {
+                opacity: 1;
+            }
+        }
     }
 }
 .flights-bg {

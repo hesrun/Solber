@@ -1231,29 +1231,40 @@ h5:first-child, .h5:first-child {
   overflow: hidden;
   min-height: 40rem;
 }
+.geography-section_directions {
+  display: flex;
+  align-items: center;
+  min-height: 47.5rem;
+}
 
 .map-afiliates {
+  padding: 0;
   position: absolute;
   left: 58%;
   bottom: 3.75rem;
+  width: auto;
 }
-.map-afiliates img {
+.map-afiliates_interactive {
+  left: 45%;
+  bottom: 5rem;
+}
+.map-afiliates > img {
   vertical-align: middle;
 }
 .map-afiliates__point {
   position: absolute;
 }
 .map-afiliates__point_spb {
-  left: 145px;
-  top: 285px;
+  left: 13.5%;
+  top: 47%;
 }
 .map-afiliates__point_msk {
-  left: 138px;
-  top: 350px;
+  left: 13%;
+  top: 57.5%;
 }
 .map-afiliates__point_krasnodar {
-  left: 62px;
-  top: 480px;
+  left: 5.5%;
+  top: 79%;
 }
 .map-afiliates__point:before {
   content: "";
@@ -1280,6 +1291,36 @@ h5:first-child, .h5:first-child {
   transition: 0.3s all;
   animation: 1.5s chronoPulse infinite;
 }
+.map-afiliates__directions {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.map-afiliates__directions_active {
+  opacity: 1;
+}
+.map-afiliates__directions-text {
+  position: absolute;
+  width: 100%;
+  bottom: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.map-afiliates__directions-text b {
+  font-size: 2.5rem;
+}
+.map-afiliates__directions-text span {
+  line-height: 1.4;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-left: 1px white solid;
+  padding-left: 1rem;
+  margin-left: 1rem;
+}
 
 .company-cards {
   height: 500px;
@@ -1300,6 +1341,7 @@ h5:first-child, .h5:first-child {
   gap: 2rem;
 }
 .directions-types__icon {
+  position: relative;
   width: 7.5rem;
   height: 7.5rem;
   flex: 0 0 auto;
@@ -1308,6 +1350,24 @@ h5:first-child, .h5:first-child {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+.directions-types__icon img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+  transition: all 0.3s;
+}
+.directions-types__icon-color {
+  opacity: 0;
+}
+.directions-types__icon:hover img {
+  opacity: 0;
+}
+.directions-types__icon:hover .directions-types__icon-color {
+  opacity: 1;
 }
 
 .flights-bg {
@@ -2157,6 +2217,19 @@ h5:first-child, .h5:first-child {
     background: none;
     color: #FF5100;
   }
+  /* ---------------------------------- index --------------------------------- */
+  .map-afiliates_interactive {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .map-afiliates_interactive img {
+    width: 100%;
+  }
+  .map-afiliates__directions {
+    width: 100%;
+    height: 100%;
+  }
   /* ---------------------------------- lines --------------------------------- */
   .lines-cars {
     background-image: none;
@@ -2206,6 +2279,33 @@ h5:first-child, .h5:first-child {
     position: relative;
     left: 0;
     bottom: 0;
+  }
+  .map-afiliates__point {
+    position: absolute;
+  }
+  .map-afiliates__point_spb {
+    left: 19.5%;
+    top: 47%;
+  }
+  .map-afiliates__point_msk {
+    left: 18%;
+    top: 57.5%;
+  }
+  .map-afiliates__point_krasnodar {
+    left: 7.5%;
+    top: 79%;
+  }
+  .map-afiliates_interactive .map-afiliates__point_spb {
+    left: 14.5%;
+    top: 47%;
+  }
+  .map-afiliates_interactive .map-afiliates__point_msk {
+    left: 13%;
+    top: 57.5%;
+  }
+  .map-afiliates_interactive .map-afiliates__point_krasnodar {
+    left: 7%;
+    top: 79%;
   }
   /* ---------------------------------- jobs ---------------------------------- */
   .table-style-list {
@@ -2269,6 +2369,35 @@ h5:first-child, .h5:first-child {
   }
   .row {
     --bs-gutter-x: 1rem;
+  }
+  /* ---------------------------------- index --------------------------------- */
+  .map-afiliates__point_spb {
+    left: 26.5%;
+    top: 47%;
+  }
+  .map-afiliates__point_msk {
+    left: 25%;
+    top: 57.5%;
+  }
+  .map-afiliates__point_krasnodar {
+    left: 13.5%;
+    top: 79%;
+  }
+  .map-afiliates_interactive .map-afiliates__point {
+    transform: scale(0.8);
+    transform-origin: left;
+  }
+  .map-afiliates_interactive .map-afiliates__point_spb {
+    left: 16.5%;
+    top: 47%;
+  }
+  .map-afiliates_interactive .map-afiliates__point_msk {
+    left: 14%;
+    top: 57.5%;
+  }
+  .map-afiliates_interactive .map-afiliates__point_krasnodar {
+    left: 8%;
+    top: 77%;
   }
 }
 @media (max-width: 576px) {
@@ -2386,6 +2515,27 @@ h5:first-child, .h5:first-child {
     height: 500px;
     transform: scale(0.75);
   }
+  .map-afiliates__point_spb {
+    left: 30.5%;
+    top: 56%;
+  }
+  .map-afiliates__point_msk {
+    left: 28%;
+    top: 69.5%;
+  }
+  .map-afiliates__point_krasnodar {
+    left: 13%;
+    top: 96%;
+  }
+  .map-afiliates__directions-text {
+    display: none;
+  }
+  .map-afiliates_interactive {
+    margin-top: 2.5rem;
+    top: 0;
+    height: auto;
+    transform: none;
+  }
   .persona__blockquote {
     font-size: 1.25rem;
     margin-bottom: 2.5rem;
@@ -2416,7 +2566,8 @@ h5:first-child, .h5:first-child {
   /* ------------------------------- directions ------------------------------- */
   .directions-types {
     margin-top: 2rem;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 0;
   }
   .directions-types__icon {
     width: 5rem;
