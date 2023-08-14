@@ -533,6 +533,13 @@
         &__bottom {
             padding: 1.5rem 0
         }
+        &__social {
+            svg {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+        }
     }
     /* ----------------------------------- 404 ---------------------------------- */
     .page-404 {
@@ -573,7 +580,7 @@
         padding: 2rem 1rem;
     }
     .modal {
-        width: auto;
+        width: 100%;
         padding: 1rem;
         &__header {
             margin-bottom: 2rem;
